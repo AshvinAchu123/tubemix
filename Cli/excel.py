@@ -1,5 +1,5 @@
 import openpyxl as p
-import project
+import Cli.project as project
 ##tk open
 def newuser():#creating a new user
     n=1
