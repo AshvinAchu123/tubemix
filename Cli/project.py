@@ -1,9 +1,8 @@
 import random
 from colorama import Fore
-import urllib.request
 from pydub import AudioSegment
 from pydub.playback import play
-loop = AudioSegment.from_wav("D:\\programstuff\\progs\\pyProgs\\jjj.wav")
+loop = AudioSegment.from_wav("D:\\programstuff\\progs\\pyProgs\\tubemix\\Cli\\jjj.wav")
 def game(h,n):
     def printt():
         for i in range(h-1,-1,-1):#displax3s the tubes
@@ -13,10 +12,13 @@ def game(h,n):
             print()
         for i in range(1,n+1):#printing tube nos
                 print(' Tube'+str(i),end='')  
-        # l=[]
-        # for j in range(0,n):
-            
-             
+        l=[]
+        for j in range(0,n):
+            stq=''
+            for i in range(h-1,-1,-1):
+                stq+='|'+str(''.join([colors_256(tubes[i][j])]))+'|'
+                stq+='\n'
+            l.append(stq)   
     def colors_256(color_):
         num1 = str(color_)
         if color_==0:

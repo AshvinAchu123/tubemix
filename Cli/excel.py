@@ -1,5 +1,6 @@
 import openpyxl as p
-import Cli.project as project
+import project 
+import os
 ##tk open
 def newuser():#creating a new user
     n=1
@@ -43,7 +44,9 @@ def ask():
         reset()
     else:
         print('session finished ')
-path='D:\\programstuff\\progs\\pyProgs\\t.xlsx'
+absolutepath = os.path.abspath(__file__)
+parentDirectory = os.path.dirname(absolutepath)
+path= os.path.join(parentDirectory, 't.xlsx') 
 wb=p.load_workbook(path)
 wa=wb['Sheet1']
 ask1=input("Are u a new user type 'yes' for new user or type 'no' for existing user:")#asking for user exist or not
